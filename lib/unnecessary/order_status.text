@@ -1,0 +1,203 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class OrderStatues extends StatefulWidget {
+  const OrderStatues({Key? key}) : super(key: key);
+
+  @override
+  _OrderStatuesState createState() => _OrderStatuesState();
+}
+
+class _OrderStatuesState extends State<OrderStatues> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0XFFEEEEEE),
+      appBar: AppBar(backgroundColor: Color(0xFF37474F),
+        toolbarHeight: 75,
+        leadingWidth: double.infinity,
+        title: Padding(
+          padding: const EdgeInsets.all(4),
+          child: Text("Order Statue",
+            style: TextStyle(fontSize: 25),
+          ),
+        ),
+
+      ),
+      body:Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+
+              Text("Pending Requests ",
+              style: TextStyle(
+                fontSize: 35,
+                color: Colors.black
+
+
+              ),),
+              SizedBox(height: 10,),
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.red,
+                      blurRadius: 8,
+                      offset: Offset(2, 4), // Shadow position
+                    ),
+                  ],
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                height: 400,
+                width: 500,
+                child: Expanded(
+                  child: Card(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      side: BorderSide(
+                        width: 2,
+                        color:Colors.white
+                      )
+                    ),
+                    child: ListView.separated(
+                      itemCount: 4,
+                        itemBuilder:(context,position)
+                        {
+                          return Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child:
+                            Row(
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("Number Order   120545",
+                                    style: TextStyle(
+                                      fontSize:30
+                                    ),),
+                                    Text("Quantity Order   5 ",
+                                      style: TextStyle(
+                                          fontSize: 30
+                                      ),),
+                                    Text("Date Order   2002/2/2",
+                                      style: TextStyle(
+                                          fontSize: 30
+                                      ),),
+
+                                  ],
+                                ),
+                                SizedBox(width: 70,),
+                                IconButton(
+                                  iconSize: 50,
+                                  color: Colors.green[200],
+                                    onPressed: (){}, icon:Icon(Icons.info)
+                                )
+                              ],
+                            ),
+                          );
+                        }, separatorBuilder: (BuildContext context, int index) {
+                        return Container(
+                          height: 1,
+                          decoration: BoxDecoration(color: Colors.black),
+                            child: SizedBox(height: 25,
+
+                            ));
+                    },
+
+                    ),
+
+                  ),
+                ),
+              ),
+              SizedBox(height: 20,),
+              Text("Accepted Requests ",
+                style: TextStyle(
+                    fontSize: 35,
+                    color: Colors.black
+
+
+                ),),
+              SizedBox(height: 10,),
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.green,
+                      blurRadius: 8,
+                      offset: Offset(2, 4), // Shadow position
+                    ),
+                  ],
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                height: 400,
+                width: 500,
+                child: Expanded(
+                  child: Card(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        side: BorderSide(
+                            width: 2,
+                            color:Colors.white
+                        )
+                    ),
+                    child: ListView.separated(
+                      itemCount: 4,
+                      itemBuilder:(context,position)
+                      {
+                        return Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Number Order   120545",
+                                    style: TextStyle(
+                                        fontSize:30
+                                    ),),
+                                  Text("Quantity Order   5 ",
+                                    style: TextStyle(
+                                        fontSize: 30
+                                    ),),
+                                  Text("Date Order   2002/2/2",
+                                    style: TextStyle(
+                                        fontSize: 30
+                                    ),),
+
+                                ],
+                              ),
+                              SizedBox(width: 70,),
+                              IconButton(
+                                  iconSize: 50,
+                                  color: Colors.green,
+                                  onPressed: (){}, icon:Icon(Icons.info)
+                              )
+                            ],
+                          ),
+                        );
+                      }, separatorBuilder: (BuildContext context, int index) {
+                      return Container(
+                          height: 1,
+                          decoration: BoxDecoration(color: Colors.black),
+                          child: SizedBox(height: 25,
+
+                          ));
+                    },
+
+                    ),
+
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

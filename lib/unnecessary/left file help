@@ -1,0 +1,172 @@
+    Navigator.of(context).push(CustomePageRoute(child:NotificationPage()));
+
+
+
+
+
+
+
+Widget textFromFieldCustom(String titleField,String hintText,Color titleTextColor,TextEditingController thisController,
+    TextInputType keyboardType,BuildContext context,
+    Color colorContain
+
+    )
+{
+
+  double w = MediaQuery.of(context).size.width;
+
+  double h=  MediaQuery.of(context).size.height;
+var color=Theme.of(context);
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      subtext(titleField, titleTextColor),
+      SizedBox(height:h*0.0010,),
+      Container(
+        color: color.backgroundColor
+        ,
+        child: TextFormField(
+
+          cursorColor:color.textSelectionHandleColor,
+
+          controller: thisController,
+          keyboardType:keyboardType ,
+
+          style: GoogleFonts.lato(color: color.textSelectionHandleColor, fontSize: 16) ,
+          decoration: InputDecoration(
+
+              focusedBorder:  OutlineInputBorder(
+                  borderSide: BorderSide(color: titleTextColor),
+                  borderRadius: BorderRadius.circular(10)),
+            enabledBorder:  OutlineInputBorder(
+                borderSide: BorderSide(color: titleTextColor),
+                borderRadius: BorderRadius.circular(10)),
+            disabledBorder:  OutlineInputBorder(
+                borderSide: BorderSide(color: titleTextColor),
+                borderRadius: BorderRadius.circular(10)),
+            errorBorder:  OutlineInputBorder(
+                borderSide: BorderSide(color:titleTextColor),
+                borderRadius: BorderRadius.circular(10)),
+            hintText:hintText,
+
+          ),
+        ),
+      )
+
+    ],
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Expanded(
+                          child: AlertDialog(
+                            backgroundColor: whiteBackground,
+                            title: subFromSubtext(
+                                'Add Type Of Category', Colors.grey),
+                            content: Container(
+                              height: 350,
+                              child: Center(
+                                heightFactor: 150,
+                                child: Column(
+                                  children: [
+                                    SecondeCoustomeTextField(
+                                        'Name Category',
+                                        'Enter Name Type Section',
+                                        Colors.black,
+                                        TextInputType.name,
+                                        contollarTitleCategories),
+                                    SecondeCoustomeTextField(
+                                        'Profit Ratio',
+                                        'EnterProfit Ratio % ',
+                                        Colors.black,
+                                        TextInputType.number,
+                                        contollarProfitRatioCategories),
+                                    SecondeCoustomeTextField(
+                                        'Detail Of Category',
+                                        'what Category can be Contain',
+                                        Colors.black,
+                                        TextInputType.text,
+                                        contollarDetailCategories),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            actions: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: FlatButton(
+                                  textColor: Colors.black,
+                                  onPressed: () {
+
+                                    cubit.addCategory(
+                                        contollarTitleCategories.text,
+                                        contollarProfitRatioCategories.text,
+                                        contollarDetailCategories.text);
+                                    contollarDetailCategories.clear();
+                                    contollarTitleCategories.clear();
+                                    contollarProfitRatioCategories.clear();
+
+
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: subFromSubtext(
+                                      'Add Type', Colors.black),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    );
+
+
+
+  AppTheme.GreenDark:ThemeData(
+     scaffoldBackgroundColor: blueColor,
+     textSelectionColor: whiteTextColor,
+     hintColor: Colors.grey,
+     buttonColor: blueColor,
+     highlightColor: secondWhiteColorBackGround,
+     textSelectionHandleColor: blueTextColor,
+     cardColor:blueColor ,
+     backgroundColor: whiteColorBackGround,
+     colorScheme:  ColorScheme.fromSwatch().copyWith(
+       primary:whiteColorBackGround,
+
+     ),
+
+
+
+
+  AppTheme.GreenDark:ThemeData(
+    scaffoldBackgroundColor: blackColor,
+    textSelectionColor: Colors.white,
+    hintColor: Colors.grey,
+    buttonColor: redColor,
+    highlightColor: greenColor,
+    textSelectionHandleColor: redColor,
+
+    backgroundColor: blackColor,
+    colorScheme:  ColorScheme.fromSwatch().copyWith(
+      primary:blackColor,
+
+    ),

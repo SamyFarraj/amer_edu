@@ -1,0 +1,681 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:test_wms/constant/component.dart';
+//2022/8/4
+3:16 AM
+                 // ListProudactToSend.clear();
+                    int i=0;
+/*
+                   var result = ListProudactToSend.map(
+                           (item) {
+                             i++;
+                     return {
+                       "products[$i][product_id]": item.products[i].productId,
+                       "products[$i][expiry_date]" :  item.products[i].expiryDate,
+                     "products[$i][price]" :  item.products[i].price,
+                     "products[$i][quantity]" :  item.products[i].quantity,
+                     };
+                   }).toList();
+
+ */
+                  // String encoded = json.encode(result);
+               //    print('the map is ${proudactsSendingWearhouseToJson(ListProudactToSend)}') ;
+                   /*
+                    final map =
+                    Map<String, String>.fromIterable(ListProudactToSend,
+                        key: (item) => 'products[$item][product_id]',
+                        value: (item) => '${ListProudactToSend[item].product_id.toString()}');
+List<ProudactsSendingWearhouse>
+                     */
+                     // print('the map is ${ ListProudactToSend.toJsonn()}') ;
+
+
+
+
+
+
+
+from comonent
+/*
+                           SectionProducts.
+                           ListProudactToSend.add(
+                               new ProudactsSendingWearhouse(cubit.price[position].text,cubit.quantity[position].text,cubit.expdata[position].text,listproudacts[position].id.toString()
+                                   , products: [])
+
+
+
+                           );
+
+
+ */
+
+
+class selected_departmenttest extends StatefulWidget {
+
+  @override
+  State<selected_departmenttest> createState() => _selected_departmenttestState();
+}
+
+class _selected_departmenttestState extends State<selected_departmenttest> {
+  bool ischeck=false;
+var volor = Color(0xFF37474F);
+
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      backgroundColor: Color(0XFFEEEEEE),
+      appBar:
+      AppBar(backgroundColor: Color(0xFF37474F),
+      toolbarHeight: 75,
+      leadingWidth: double.infinity,
+        title: Padding(
+        padding: const EdgeInsets.all(4),
+        child: Text("Name Section",
+        style: TextStyle(fontSize: 25),
+        ),
+      ),
+
+      ),
+      body:
+      Container(
+        height: double.infinity,
+        width: double.infinity,
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+           Expanded(
+             flex:12,
+             child:
+             ListView.builder(
+               shrinkWrap: true,
+          physics:ScrollPhysics() ,
+
+          itemCount: 20,
+          itemBuilder: (context, position) {
+              return
+
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 10, right: 10, top: 25, bottom: 15),
+                  child: Container(
+                    height: 275,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black38,
+                          blurRadius: 12,
+                          offset: Offset(4, 8), // Shadow position
+                        ),
+                      ],
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    // width: double.infinity,
+                    child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Name Proudact',
+                                        style: TextStyle(fontSize: 25),
+                                      ),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Text(
+                                        'Frute jouis',
+                                        style: TextStyle(
+                                            fontSize: 20, color: Colors.green),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Quantity',
+                                        style: TextStyle(fontSize: 20),
+
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        width: 150,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white54,
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: TextFormField(
+                                          keyboardType: TextInputType.number,
+                                          style: TextStyle(fontSize: 25),
+                                          decoration: InputDecoration(
+                                            hintText: '0',
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 30,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(5),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Price',
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        width: 150,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: TextFormField(
+                                          keyboardType: TextInputType.number,
+                                          style: TextStyle(fontSize: 25),
+                                          decoration: InputDecoration(
+                                            hintText: ' 0',
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'EXP Date',
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        width: 150,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: TextFormField(
+                                          keyboardType: TextInputType.number,
+                                          style: TextStyle(fontSize: 25),
+                                          decoration: InputDecoration(
+                                            hintText: '0',
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 30,
+                            ),
+                            Transform.scale(
+                              scale: 2,
+
+                              child: Checkbox(
+
+                                value: ischeck,
+                                tristate: false,
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                    ischeck = value!;
+                                  });
+
+
+                                },
+
+                                focusColor: Colors.green,
+                                activeColor: Colors.green,
+                                splashRadius: 30,
+                              ),
+                            )
+                          ],
+                        )),
+                  ),
+                );
+          },
+        ),
+           )
+            ,
+
+            /*
+            Column(
+              //  mainAxisAlignment: MainAxisAlignment.end,
+
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 10, right: 10, top: 25, bottom: 15),
+                  child: Container(
+                    height: 275,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black38,
+                          blurRadius: 12,
+                          offset: Offset(4, 8), // Shadow position
+                        ),
+                      ],
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    // width: double.infinity,
+                    child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Name Proudact',
+                                        style: TextStyle(fontSize: 25),
+                                      ),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Text(
+                                        'Frute jouis',
+                                        style: TextStyle(
+                                            fontSize: 20, color: Colors.green),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Quantity',
+                                        style: TextStyle(fontSize: 20),
+
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        width: 150,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white54,
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: TextFormField(
+                                          keyboardType: TextInputType.number,
+                                          style: TextStyle(fontSize: 25),
+                                          decoration: InputDecoration(
+                                            hintText: '0',
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 30,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(5),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Price',
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        width: 150,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: TextFormField(
+                                          keyboardType: TextInputType.number,
+                                          style: TextStyle(fontSize: 25),
+                                          decoration: InputDecoration(
+                                            hintText: ' 0',
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'EXP Date',
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        width: 150,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: TextFormField(
+                                          keyboardType: TextInputType.number,
+                                          style: TextStyle(fontSize: 25),
+                                          decoration: InputDecoration(
+                                            hintText: '0',
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 30,
+                            ),
+                            Transform.scale(
+                              scale: 2,
+                              child: Checkbox(
+                                value: ischeck,
+                                tristate: false,
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                    ischeck = value!;
+                                  });
+
+
+                                },
+                                focusColor: Colors.green,
+                                activeColor: Colors.green,
+                                splashRadius: 30,
+                              ),
+                            )
+                          ],
+                        )),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 10, right: 10, top: 25, bottom: 15),
+                  child: Container(
+                    height: 275,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black38,
+                          blurRadius: 12,
+                          offset: Offset(4, 8), // Shadow position
+                        ),
+                      ],
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    // width: double.infinity,
+                    child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Name Proudact',
+                                        style: TextStyle(fontSize: 25),
+                                      ),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Text(
+                                        'Frute jouis',
+                                        style: TextStyle(
+                                            fontSize: 20, color: Colors.green),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Quantity',
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        width: 150,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white54,
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: TextFormField(
+                                          keyboardType: TextInputType.number,
+                                          style: TextStyle(fontSize: 25),
+                                          decoration: InputDecoration(
+                                            hintText: '0',
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 30,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(5),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Price',
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        width: 150,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: TextFormField(
+                                          keyboardType: TextInputType.number,
+                                          style: TextStyle(fontSize: 25),
+                                          decoration: InputDecoration(
+                                            hintText: ' 0',
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'EXP Date',
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        width: 150,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: TextFormField(
+                                          keyboardType: TextInputType.number,
+                                          style: TextStyle(fontSize: 25),
+                                          decoration: InputDecoration(
+                                            hintText: '0',
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 30,
+                            ),
+                            Transform.scale(
+                              scale: 2,
+                              child: Checkbox(
+                                value: ischeck,
+                                tristate: false,
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                    ischeck = value!;
+                                  });
+
+
+                                },
+                                focusColor: Colors.green,
+                                activeColor: Colors.green,
+                                splashRadius: 30,
+                              ),
+                            )
+                          ],
+                        )),
+                  ),
+                ),
+              ],
+            ),
+
+          //  ListProudact(),
+*/
+
+
+
+            Expanded(
+
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                 // color: Color(),
+                  alignment: Alignment.center,
+                  width: double.infinity,
+                  height: 75,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(50),
+                          topRight: Radius.circular(50)),
+                      color: Color(0XFFA5D6A7)),
+                  child: Text(
+                    "Send Order ",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 30,color: Colors.white,fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),
+
+
+          ],
+        ),
+      ),
+
+
+    );
+  }
+}
